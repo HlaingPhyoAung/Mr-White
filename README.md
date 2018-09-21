@@ -1,4 +1,4 @@
-import socket
+Iimport socket
 
 s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 s.connect(("192.168.0.1", 80))
