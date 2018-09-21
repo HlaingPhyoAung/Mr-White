@@ -1,2 +1,25 @@
-# Mr-White
-BURMA
+import socket
+
+s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+s.connect(("192.168.0.1", 80))
+print("SoloLearn Local IP: ", s.getsockname()[0], "\nPort: ", s.getsockname()[1])
+# n
+external = (socket.getaddrinfo(socket.gethostname(), 80, proto=socket.IPPROTO_TCP))
+str1 = (str(external))
+str2 = str1.split(',')
+str3 = str2[4].split("(")
+print("Local IPv6: ", str3[1])
+print("Host: ", socket.gethostname())
+external2 = (socket.getaddrinfo("sololearn.com", 80, proto=socket.IPPROTO_TCP))
+s1 = (str(external2))
+s2 = s1.split(',')
+s3 = s2[4].split("(")
+print("SoloLearn Server IP: ", s3[1])
+print("Port: 80/8080")
+external3 = (socket.getaddrinfo("ident.me", 80, proto=socket.IPPROTO_TCP))
+s11 = (str(external3))
+s22 = s11.split(',')
+s33 = s22[4].split("(")
+print("Device External IP: ", s33[1])
+print("Port: 80/8080")
+s.close()
