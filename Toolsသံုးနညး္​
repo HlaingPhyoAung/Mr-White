@@ -1,0 +1,4 @@
+cd sqlmap
+Ls
+python2 sqlmap.py
+Now you use...
